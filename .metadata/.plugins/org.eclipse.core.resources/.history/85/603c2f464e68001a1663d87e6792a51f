@@ -1,0 +1,107 @@
+import java.util.*;
+
+
+class MergeSort2 {
+	
+
+	
+	
+	public static void main(String[] args){
+		//Merge Sort iterative algorithm
+		//Divide the array to left and right half - Even(Equal) - Odd(Right Heavy)
+		//PseudoCode
+		// MergeSort(A);
+		// A = [1...n]
+		// L = [1..n/2 -1] ; R = [n/2..n];
+		// Lm = MergeSort(L); Rm = MergeSort(R);
+		// A = MergeFn(Lm,Rm);
+		
+		// MergeSubroutine
+		//public Array MergeFn(Lm,Rm){
+		// for k = 1...n 
+		//  if Lm[i] < Rm[j]
+		//		A[k] = Lm[i];
+		//		i++;
+		//	if Lm[i] > Rm[j]
+		//		A[k] = Rm[j];
+		//		j++;
+		//	k++;
+		// return A;
+		//}
+		int[] A = {9,6,7,8,2,3,1,4};
+		
+		System.out.println("Sorted Array -");
+		
+		int[] Output = mergeSort(A);
+		for(int i = 0; i < Output.length ; i++){
+			System.out.print(Output[i]+", " );
+		}
+	
+	
+	}
+	
+	public static int[] mergeSort(int[] A){
+		int length = A.length;
+		int sizeL , sizeR;
+		if(length%2 == 0){
+			sizeL = length /2;
+			sizeR = length - sizeL;
+		}else{
+			sizeL = (int)(length/2);
+			sizeR = length - sizeL;
+			
+		}
+		if(length == 1){
+			sizeL = 1;
+			sizeR = 1;
+		}
+		int[] L = new int[sizeL];
+		int[] R = new int[sizeR];
+		if(sizeL > 0){
+		for(int i = 0; i< sizeL ; i++)
+		{
+			System.out.println(i);
+			L[i] = A[i];
+		}
+		
+		for(int j = 0 ; j < sizeR ; j++){
+			System.out.println(j);
+			R[j] = A[j+ sizeL - 1];
+		}
+		}else if (length == 2){
+			L[0] = A[0];
+			R[0] = A[1];
+			return merge(L,R);
+		}
+		
+		//Merge Left and Right Recursively
+		
+		int[] Lm = mergeSort(L);
+		int[] Rm = mergeSort(R);
+		
+		return merge(Lm,Rm);
+	
+	}
+	
+	public static int[] merge(int[] L, int[] R){
+		int k =0;
+		int i=0,j = 0;
+		int[] A = new int[L.length + R.length];
+		while( k > (L.length + R.length) ){
+			if(L[i] < R[j]){
+				A[k] = L[i];
+				i++;
+			}else {
+				A[k] = R[j];
+				j++;
+			}
+			
+			k++;
+		
+		}
+		
+	return A;
+	}
+
+
+}

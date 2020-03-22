@@ -1,0 +1,13 @@
+package basics;
+
+public class MergeSort2 {
+
+	public static void main(String[] args) {
+		// TODO PSEUDOCODE
+//		Merge sort is a recursive algorithm
+//		Calls itself in a divide and conquer way untill you find the base case 
+		
+
+	}
+
+}

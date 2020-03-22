@@ -1,0 +1,28 @@
+package basics;
+
+public class FibonacciNo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Pseudocode
+//		function fib1(n)
+//		if n = 0: return 0
+//		if n = 1: return 1
+//		return fib1(n − 1) + fib1(n − 2)
+		long start = System.currentTimeMillis();
+		System.out.println("start time"+start);
+		System.out.println("Print nth Fib"+fib(37));
+		long end = System.currentTimeMillis();
+		System.out.println("End time"+end);
+		long elapsedTime = end - start;
+		System.out.println("Time taken for the computation"+elapsedTime);
+	}
+	
+	public static int fib(int n){
+		if(n == 0){ return 0;}
+		else if(n == 1){ return 1;}
+		else return fib(n-1) + fib(n-2);
+		
+	}
+
+}

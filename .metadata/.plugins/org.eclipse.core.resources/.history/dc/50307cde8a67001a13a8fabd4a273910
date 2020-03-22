@@ -1,0 +1,33 @@
+package basics;
+
+import java.time.Duration;
+import java.time.Instant;
+
+public class FibonacciNo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Pseudocode
+//		function fib1(n)
+//		if n = 0: return 0
+//		if n = 1: return 1
+//		return fib1(n − 1) + fib1(n − 2)
+		//This method just fails to find the 50th Fibonacci number takes 51.6 second
+		//The complexity of this algorithm goes exponential for the input
+		Instant start = Instant.now();
+		System.out.println("start time"+start);
+		System.out.println("Print nth Fib"+fib(50));
+		Instant end = Instant.now();
+		System.out.println("End time"+end);
+		Duration elapsedTime = Duration.between(start, end);
+		System.out.println("Time taken for the computation"+elapsedTime);
+	}
+	
+	public static int fib(int n){
+		if(n == 0){ return 0;}
+		else if(n == 1){ return 1;}
+		else return fib(n-1) + fib(n-2);
+		
+	}
+
+}

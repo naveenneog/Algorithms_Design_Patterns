@@ -1,0 +1,17 @@
+package basics;
+
+public class MergeSort2 {
+
+	public static void main(String[] args) {
+		// TODO PSEUDOCODE
+//		Merge sort is a recursive algorithm
+//		Calls itself in a divide and conquer way untill you find the base case 
+//		This is crucial for the 
+//		Split the array into half
+//		A = [1..n];
+//		L = [1..n/2];
+//		
+
+	}
+
+}
